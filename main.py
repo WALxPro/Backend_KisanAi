@@ -1,10 +1,12 @@
 from fastapi import FastAPI
 from routes.admin_routes import router as admin_router
+from routes.ads_routes import router as ads_router
 from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 from database import db
 
 app.include_router(admin_router, prefix="/admin", tags=["Admin"])
+app.include_router(ads_router, prefix="/ads", tags=["Ads"])
 
 
 
