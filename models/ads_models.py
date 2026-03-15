@@ -9,3 +9,9 @@ class Ad(BaseModel):
     status: Literal["Active", "Inactive"]
     image: HttpUrl
     created_at: Optional[datetime] = None
+
+class UpdateAd(BaseModel):
+    title: Optional[str] = None
+    description: Optional[str] = None
+    image: Optional[HttpUrl] = None
+    status: Optional[str] = None
